@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blockchain-orderer
+  namespace: fabric
+  labels:
+    run: blockchain-orderer
+spec:
+  type: ClusterIP
+  selector:
+    name: orderer
+  ports:
+  - protocol: TCP
+    port: 31010
+    name: grpc
